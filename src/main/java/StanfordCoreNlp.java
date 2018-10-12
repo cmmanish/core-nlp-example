@@ -6,9 +6,11 @@ import edu.stanford.nlp.util.CoreMap;
 
 import java.util.List;
 import java.util.Properties;
+import java.util.logging.Logger;
 
-public class CoreNlpExample {
+public class StanfordCoreNlp {
 
+    final private static Logger log = Logger.getLogger(String.valueOf(StanfordCoreNlp.class));
     public static void main(String[] args) {
 
         // creates a StanfordCoreNLP object, with POS tagging, lemmatization, NER, parsing, and coreference resolution
@@ -17,7 +19,7 @@ public class CoreNlpExample {
         StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
 
         // read some text in the text variable
-        String text = "What is the Weather in Bangalore right now?";
+        String text = "What is the Weather in Bangalore right now?" + "What is the Weather in Sunnyvale right now?";
 
         // create an empty Annotation just with the given text
         Annotation document = new Annotation(text);
